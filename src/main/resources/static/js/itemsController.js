@@ -7,18 +7,25 @@
 //  e. category
 //  f. images
 
+
+const displayItemDetails = (item) => {
+  document.querySelector("#itemName").innerText = item.name;
+  document.querySelector("#itemImage").src = item.imageUrl;
+  document.querySelector("#itemDescription").innerText = item.description;
+  document.querySelector("#itemPrice").innerText = item.price;
+};
+
 class Product {
   productItems = [];
   constructor() {}
-  addProduct(name, description, price, quantity, category, image, createAt) {
+  addProduct(name, description, price, quantity, category, image) {
     const item = {
       name: name,
       description: description,
       price: price,
       quantity: quantity,
       category: category,
-      image: image,
-      createAt: createAt,
+      image: image
     };
     this.productItems.push(item);
   } //end of addProduct method
@@ -28,18 +35,48 @@ class Product {
     this.displayProduct();
   }
 
-  displayProduct() {
+  displayProduct(){
+    let productController = this;
+    productController._items = [];
+
+    fetch('http://127.0.0.1:8080/item/all')
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log("2. receive data");
+            console.log(data);
+            data.forEach((item, index)=>{
+                const itemObj = {
+                    id: item.id,
+                    name: item.name,
+                    description: item.description,
+                    price: item.price,
+                    quantity: item.quantity,
+                    category: item.category,
+                    imageUrl: item.imageUrl
+                };
+                productController._items.push(itemObj);
+            });
+
+            productController.renderProductPage();
+
+        })
+        .catch((error)=>{
+            console.log(error);
+        });
+  }
+
+  renderProductPage() {
     let productDetails = "";
     let index = 0;
     let moreBtnId = "";
 
-    this.productItems.forEach((item) => {
+    this._items.forEach((item) => {
       if((item.category).includes(this.category) || this.category == undefined || this.category == "all"){
         moreBtnId = "item" + index;
         productDetails += `
         <div class="col-6 col-md-4 my-4">
           <div class="card mh-100">
-              <img src="${item.image}" class="card-img-top" alt="...">
+              <img src="${item.imageUrl}" class="card-img-top" alt="...">
               <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.price}</p>
@@ -55,7 +92,7 @@ class Product {
 
     //Display information dynamically for each card when click on "More button"
     index = 0;
-    this.productItems.forEach((item) => {
+    this._items.forEach((item) => {
       if((item.category).includes(this.category) || this.category == undefined || this.category == "all"){
         moreBtnId = "item" + index;
         document
