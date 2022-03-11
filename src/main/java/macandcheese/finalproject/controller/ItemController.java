@@ -49,13 +49,13 @@ public class ItemController {
 
     @CrossOrigin
     @PostMapping("/add")
-    public void save(  @RequestParam(name="productName", required = true) String name,
-                       @RequestParam(name="productDesc", required = true) String description,
-                       @RequestParam(name="imageUrl", required = true) String imageUrl, //is this name correct?
+    public void save(  @RequestParam(name="name", required = true) String name,
+                       @RequestParam(name="description", required = true) String description,
+                       @RequestParam(name="imageURL", required = true) String imageUrl, //is this name correct?
                        @RequestParam(name="quantity", required = true) Integer quantity,
-                       @RequestParam(name="categories", required = true) String categories, //multiple input possible
+                       @RequestParam(name="category", required = true) String categories, //multiple input possible
                        @RequestParam(name="price", required = true) double price,
-                       @RequestParam("image") MultipartFile multipartFile) throws IOException {
+                       @RequestParam("imagefile") MultipartFile multipartFile) throws IOException {
 
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);

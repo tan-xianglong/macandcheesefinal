@@ -16,18 +16,34 @@ const displayItemDetails = (item) => {
 };
 
 class Product {
-  productItems = [];
+
   constructor() {}
-  addProduct(name, description, price, quantity, category, image) {
-    const item = {
-      name: name,
-      description: description,
-      price: price,
-      quantity: quantity,
-      category: category,
-      image: image
-    };
-    this.productItems.push(item);
+  addProduct(name, description, price, quantity, imageUrl, imageObject) {
+    const productController = this;
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('price', price);
+    formData.append('quantity', quantity);
+    formData.append('category', 'beef');
+    formData.append('imageURL', imageUrl);
+    formData.append('imagefile',imageObject);
+
+    fetch('http://localhost:8080/item/add', {
+         method: 'POST',
+         body: formData
+         })
+         .then(function(response) {
+             console.log(response.status); // Will show you the status
+             if (response.ok) {
+                 alert("Successfully Added Product!")
+             }
+         })
+         .catch((error) => {
+             console.error('Error:', error);
+             alert("Error adding item to Product")
+         });
+
   } //end of addProduct method
 
   filterCat(option){

@@ -1,88 +1,88 @@
 //initialize DOM elements
-
-const chkbox_beef = document.querySelector("#chkbox_beef");
-const chkbox_seafood = document.querySelector("#chkbox_seafood");
-const chkbox_chicken = document.querySelector("#chkbox_chicken");
-const chkbox_all = document.querySelector("#chkbox_all");
-const pdtNameField = document.querySelector("#productName");
-const pdtDesc = document.querySelector("#productDesc");
-const pdtPrice = document.querySelector("#price");
-const pdtQuantity = document.querySelector("#quantity");
+//
+//const chkbox_beef = document.querySelector("#chkbox_beef");
+//const chkbox_seafood = document.querySelector("#chkbox_seafood");
+//const chkbox_chicken = document.querySelector("#chkbox_chicken");
+//const chkbox_all = document.querySelector("#chkbox_all");
+//const pdtNameField = document.querySelector("#productName");
+//const pdtDesc = document.querySelector("#productDesc");
+//const pdtPrice = document.querySelector("#price");
+//const pdtQuantity = document.querySelector("#quantity");
 const pdtImg = document.querySelector("#image");
-const clearBtn = document.querySelector("#clearBtn");
-const preview = document.querySelector("#image-container-preview");
+//const clearBtn = document.querySelector("#clearBtn");
+//const preview = document.querySelector("#image-container-preview");
+//
+//// Initialize global variables
+//let checkBoxes;
+//let checkboxChecked = [];
+//let isCheckBoxChecked = false;
+//
+//// 1. Checkbox restriction
+////    a. create DOM variables for all checkboxes
+////    b. create event handler
+////    c. add event listener to call the event handler
+//
+////event handler
+//const disableChkbox = () => {
+//  if (chkbox_all.checked == true) {
+//    chkbox_beef.checked = true;
+//    chkbox_chicken.checked = true;
+//    chkbox_seafood.checked = true;
+//    chkbox_beef.disabled = true;
+//    chkbox_chicken.disabled = true;
+//    chkbox_seafood.disabled = true;
+//  } else {
+//    chkbox_beef.disabled = false;
+//    chkbox_chicken.disabled = false;
+//    chkbox_seafood.disabled = false;
+//    chkbox_beef.checked = false;
+//    chkbox_chicken.checked = false;
+//    chkbox_seafood.checked = false;
+//  }
+//};
+//
+////event listener
+//chkbox_all.addEventListener("change", disableChkbox);
+//
+////2. Clear form function
+//const clearForm = () => {
+//  chkbox_beef.checked = false;
+//  chkbox_seafood.checked = false;
+//  chkbox_chicken.checked = false;
+//  chkbox_all.checked = false;
+//  pdtNameField.value = "";
+//  pdtDesc.value = "";
+//  pdtPrice.value = "";
+//  pdtQuantity.value = "";
+//  pdtImg.value = "";
+//};
 
-// Initialize global variables
-let checkBoxes;
-let checkboxChecked = [];
-let isCheckBoxChecked = false;
-
-// 1. Checkbox restriction
-//    a. create DOM variables for all checkboxes
-//    b. create event handler
-//    c. add event listener to call the event handler
-
-//event handler
-const disableChkbox = () => {
-  if (chkbox_all.checked == true) {
-    chkbox_beef.checked = true;
-    chkbox_chicken.checked = true;
-    chkbox_seafood.checked = true;
-    chkbox_beef.disabled = true;
-    chkbox_chicken.disabled = true;
-    chkbox_seafood.disabled = true;
-  } else {
-    chkbox_beef.disabled = false;
-    chkbox_chicken.disabled = false;
-    chkbox_seafood.disabled = false;
-    chkbox_beef.checked = false;
-    chkbox_chicken.checked = false;
-    chkbox_seafood.checked = false;
-  }
-};
-
-//event listener
-chkbox_all.addEventListener("change", disableChkbox);
-
-//2. Clear form function
-const clearForm = () => {
-  chkbox_beef.checked = false;
-  chkbox_seafood.checked = false;
-  chkbox_chicken.checked = false;
-  chkbox_all.checked = false;
-  pdtNameField.value = "";
-  pdtDesc.value = "";
-  pdtPrice.value = "";
-  pdtQuantity.value = "";
-  pdtImg.value = "";
-};
-
-//3. submit form function to validate and store values
-const submitForm = () => {
-  //form validation
-  if (!isCheckBoxChecked){
-    chkbox_beef.setCustomValidity("Please select at least one category.");
-    chkbox_beef.reportValidity();
-  } else {
-    //initialize storing form values variables
-    let productName = pdtNameField.value;
-    let productDesc = pdtDesc.value;
-    let price = pdtPrice.value;
-    let quantity = pdtQuantity.value;
-    let createAt = new Date();
-    macNcheese.addProduct(
-      productName,
-      productDesc,
-      price,
-      quantity,
-      checkboxChecked,
-      image,
-      createAt
-    ); //category and image to work on it
-    clearForm();
-    alert("Product has been added successfully.");
-  }
-};
+////3. submit form function to validate and store values
+//const submitForm = () => {
+//  //form validation
+//  if (!isCheckBoxChecked){
+//    chkbox_beef.setCustomValidity("Please select at least one category.");
+//    chkbox_beef.reportValidity();
+//  } else {
+//    //initialize storing form values variables
+//    let productName = pdtNameField.value;
+//    let productDesc = pdtDesc.value;
+//    let price = pdtPrice.value;
+//    let quantity = pdtQuantity.value;
+//    let createAt = new Date();
+//    macNcheese.addProduct(
+//      productName,
+//      productDesc,
+//      price,
+//      quantity,
+//      checkboxChecked,
+//      image,
+//      createAt
+//    ); //category and image to work on it
+//    clearForm();
+//    alert("Product has been added successfully.");
+//  }
+//};
 
 //4. detecting and storing category result
 const storeCheckBoxValue = () => {

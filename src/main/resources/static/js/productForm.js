@@ -1,5 +1,21 @@
-const productsControl = new ProductsController();
+const productsControl = new Product();
 var storeImage = ""
+const newItemForm = document.querySelector("#newItemForm");
+const newItemNameInput = document.querySelector('#productName');
+const newItemDescription = document.querySelector('#productDesc');
+const newItemImageUrl = document.querySelector('#image');
+const newItemQuantity = document.querySelector('#quantity');
+const newItemPrice = document.querySelector('#price');
+const clearBtn = document.querySelector("#clearBtn");
+const preview = document.querySelector("#image-container-preview");
+const chkbox_beef = document.querySelector("#chkbox_beef");
+const chkbox_seafood = document.querySelector("#chkbox_seafood");
+const chkbox_chicken = document.querySelector("#chkbox_chicken");
+const chkbox_all = document.querySelector("#chkbox_all");
+
+let checkBoxes;
+let checkboxChecked = [];
+let isCheckBoxChecked = false;
 
 //When user clicks on 'Save Item', calls API to add items to the database
 //Add an 'onsubmit' event listener for productform to add a product
@@ -7,39 +23,71 @@ newItemForm.addEventListener('submit', (event) => {
     // Prevent default action
     event.preventDefault();
     // Select the inputs
-    const newItemNameInput = document.querySelector('#newItemNameInput');
-    const newItemDescription = document.querySelector('#newItemDescription');
-    const newItemImageUrl = document.querySelector('#newItemImageFile');
-    const newItemStyle = document.querySelector('#newItemStyle');
-    const newItemPrice = document.querySelector('#newItemPrice');
 
-    /*
-        Do the Validation code here
-    */
+
+    //Do the Validation code here
 
     // Get the values of the inputs - variable names to be same as MySQL columns
     const name = newItemNameInput.value;
     const description = newItemDescription.value;
-    const imageUrl = "images/" + newItemImageUrl.value.replace("C:\\fakepath\\", "");
-    const style = newItemStyle.value;
+    const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
+    const quantity = newItemQuantity.value;
     const price = newItemPrice.value;
 
 // Clear the form
     newItemNameInput.value = '';
     newItemDescription.value = '';
     newItemImageUrl.value = '';
-    newItemStyle.value = '';
+    newItemQuantity.value = '';
     newItemPrice.value = '';
+    chkbox_beef.checked = false;
+    chkbox_seafood.checked = false;
+    chkbox_chicken.checked = false;
+    chkbox_all.checked = false;
 
     // Add the task to the task manager
-    productsControl.addItem(name, description, imageUrl, style, price, storeImage);
-
+    productsControl.addProduct(name, description, price, quantity, imageUrl, storeImage);
 });
 
 // select file input
-const input = document.querySelector('#newItemImageFile');
+const input = document.querySelector('#image');
 
 // add event listener
 input.addEventListener('change', () => {
     storeImage = input.files[0];
 });
+
+
+//checkbox validation
+const disableChkbox = () => {
+  if (chkbox_all.checked == true) {
+    chkbox_beef.checked = true;
+    chkbox_chicken.checked = true;
+    chkbox_seafood.checked = true;
+    chkbox_beef.disabled = true;
+    chkbox_chicken.disabled = true;
+    chkbox_seafood.disabled = true;
+  } else {
+    chkbox_beef.disabled = false;
+    chkbox_chicken.disabled = false;
+    chkbox_seafood.disabled = false;
+    chkbox_beef.checked = false;
+    chkbox_chicken.checked = false;
+    chkbox_seafood.checked = false;
+  }
+};
+
+chkbox_all.addEventListener("change", disableChkbox);
+
+//Clear form function
+const clearForm = () => {
+  chkbox_beef.checked = false;
+  chkbox_seafood.checked = false;
+  chkbox_chicken.checked = false;
+  chkbox_all.checked = false;
+  newItemNameInput.value = '';
+  newItemDescription.value = '';
+  newItemImageUrl.value = '';
+  newItemQuantity.value = '';
+  newItemPrice.value = '';
+};
