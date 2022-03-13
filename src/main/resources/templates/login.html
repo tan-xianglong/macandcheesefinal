@@ -21,14 +21,23 @@
   <!-- End of Navigation Bar -->
   <main>
     <h1 class="text-center">Sign In</h1>
-    <form class="container-sm col-sm-3">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Username</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="john.smith@email.com">
+
+    <div th:if="${param.error}">
+      Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+      You have been logged out.
+    </div>
+
+
+    <form class="container-sm col-sm-3" th:action="@{/login}" method="post">
+      <div class="mb-3 form-group">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" aria-describedby="NameHelp" required>
       </div>  
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+      <div class="mb-3 form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
         <div id="forget" class="form-text"><a href="#">Forget Username or Password?</a></div>
         </div>
       </div>

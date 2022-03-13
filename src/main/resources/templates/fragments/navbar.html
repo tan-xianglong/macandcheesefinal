@@ -1,5 +1,5 @@
 <<!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -27,9 +27,17 @@
                 <li class="nav-item">
                     <a class="nav-link"  th:href="@{products}"><span class="h2 px-3" style="color: #AC0D0D;">Shop</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{login}"><span class="h2 px-3" style="color: #AC0D0D;">Log In</span></a>
-                </li>
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="nav-link"  th:href="@{productform}"><span class="h2 px-3" style="color: #AC0D0D;">Add Product</span></a>
+                    </li>
+                    <form id="logOut" th:action="@{/logout}" method="post">
+                        <li class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();"><span class="h2 px-3" style="color: #AC0D0D;">Log Out</span></a></li>
+                    </form>
+                </div>
+                <div sec:authorize="isAnonymous()">
+                    <li class="nav-item"><a class="nav-link" th:href="@{login}"><span class="h2 px-3" style="color: #AC0D0D;">Log In</span></a></li>
+                </div>
             </ul>
         </div>
     </div>
