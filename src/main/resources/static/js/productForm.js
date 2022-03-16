@@ -34,6 +34,17 @@ newItemForm.addEventListener('submit', (event) => {
     const quantity = newItemQuantity.value;
     const price = newItemPrice.value;
 
+    var category='';
+    if (chkbox_beef.checked) {
+        category += 'beef ';
+    }
+    if (chkbox_seafood.checked) {
+        category += 'seafood ';
+    }
+    if (chkbox_chicken.checked) {
+        category += 'chicken ';
+    }
+
 // Clear the form
     newItemNameInput.value = '';
     newItemDescription.value = '';
@@ -46,7 +57,7 @@ newItemForm.addEventListener('submit', (event) => {
     chkbox_all.checked = false;
 
     // Add the task to the task manager
-    productsControl.addProduct(name, description, price, quantity, imageUrl, storeImage);
+    productsControl.addProduct(name, description, price, quantity, category, imageUrl, storeImage);
 });
 
 // select file input

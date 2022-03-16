@@ -18,14 +18,14 @@ const displayItemDetails = (item) => {
 class Product {
 
   constructor() {}
-  addProduct(name, description, price, quantity, imageUrl, imageObject) {
+  addProduct(name, description, price, quantity, category, imageUrl, imageObject) {
     const productController = this;
     const formData = new FormData();
     formData.append('name', name);
     formData.append('description', description);
     formData.append('price', price);
     formData.append('quantity', quantity);
-    formData.append('category', 'beef');
+    formData.append('category', category);
     formData.append('imageURL', imageUrl);
     formData.append('imagefile',imageObject);
 
