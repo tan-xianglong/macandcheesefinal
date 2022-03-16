@@ -1,22 +1,31 @@
 
 body {
   background-color: #F0C929;
+
 }
 
-.carousel-caption {
-         margin:0;
-         background-repeat: no-repeat;
-         background-size: cover;
-         color:white;
-         height:auto;
-         width: auto;
-     }
-.carousel-indicators{
-         height:auto;
-         width: auto;
-         padding-left: 280px;
- padding-right: 280px;
-}
+.jumbotron {
+  background-color: #FBE6C2;
+  max-width: 100%;
+  margin-top: 60px;
+  text-align: center;
+  }
+
+.jumbotron h2 {
+  font-size: 50px;
+  text-align: center;
+  }
+
+.header h2 span {
+  color:#ffc200;
+  }
+
+.banner {
+  background-color: #F0C929;
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+  }
 
 .cover-photo {
 padding-left: 180px;
@@ -24,35 +33,12 @@ padding-right: 180px;
 padding-top: 20px;
 height:auto;
 width: auto;
-
 }
+
 .best{
-padding-top: 10px;
-padding-bottom: 10px;
-}
-.jumbotron {
-background-color: #FBE6C2;
-max-width: 100%;
-margin-top: 60px;
-text-align: center;
-}
-
-.jumbotron h2 {
-font-size: 50px;
-text-align: center;
-}
-
-.jumbotron h2 span {
-color:#ffc200;
-}
-.banner {
-background-color: #F0C929;
-color: black;
-text-align: center;
-padding-top: 20px;
-
-
-}
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
 .carousel-inner{
  display: flex;
  height: auto;
@@ -63,12 +49,43 @@ padding-top: 20px;
  padding-bottom: 20px;
 
 }
-.section3{
- background-color: #F0C929;
+.carousel-caption {
+  margin:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  height:auto;
+  width: auto;
+}
+.carousel-indicators{
+  height:auto;
+  width: auto;
+  padding-left: 280px;
+  padding-right: 280px;
 }
 
-@media screen and (max-width: 768px) {
 
+@media only screen and (max-width:800px) {
+
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+     .carousel-caption{
+
+     }
+     .carousel-indicators{
+
+     }
+     .carousel-inner{
+     width: 100%;
+     }
+
+    .container-fluid{
+      margin-top: auto;
+
+    }
 
      .banner h2{
        font-size: 20px;
