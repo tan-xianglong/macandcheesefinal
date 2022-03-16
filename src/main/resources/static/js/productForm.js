@@ -45,6 +45,7 @@ newItemForm.addEventListener('submit', (event) => {
     chkbox_seafood.checked = false;
     chkbox_chicken.checked = false;
     chkbox_all.checked = false;
+    preview.removeChild(preview.firstChild);
 
     // Add the task to the task manager
     productsControl.addProduct(name, description, price, quantity, category, imageUrl, storeImage);
@@ -86,6 +87,9 @@ const clearForm = () => {
   chkbox_seafood.checked = false;
   chkbox_chicken.checked = false;
   chkbox_all.checked = false;
+  chkbox_beef.disabled = false;
+  chkbox_chicken.disabled = false;
+  chkbox_seafood.disabled = false;
   newItemNameInput.value = '';
   newItemDescription.value = '';
   newItemImageUrl.value = '';
