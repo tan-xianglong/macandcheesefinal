@@ -33,8 +33,7 @@ newItemForm.addEventListener('submit', (event) => {
     const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
     const quantity = newItemQuantity.value;
     const price = newItemPrice.value;
-
-    var category='';
+    const category='';
     if (chkbox_beef.checked) {
         category += 'beef ';
     }
@@ -55,6 +54,7 @@ newItemForm.addEventListener('submit', (event) => {
     chkbox_seafood.checked = false;
     chkbox_chicken.checked = false;
     chkbox_all.checked = false;
+    preview.removeChild(preview.firstChild);
 
     // Add the task to the task manager
     productsControl.addProduct(name, description, price, quantity, category, imageUrl, storeImage);
@@ -96,9 +96,33 @@ const clearForm = () => {
   chkbox_seafood.checked = false;
   chkbox_chicken.checked = false;
   chkbox_all.checked = false;
+  chkbox_beef.disabled = false;
+  chkbox_chicken.disabled = false;
+  chkbox_seafood.disabled = false;
   newItemNameInput.value = '';
   newItemDescription.value = '';
   newItemImageUrl.value = '';
   newItemQuantity.value = '';
   newItemPrice.value = '';
 };
+
+//4. detecting and storing category result
+const storeCheckBoxValue = () => {
+  checkBoxes = document.querySelectorAll("input[type=checkbox]");
+  checkBoxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function(){
+      checkboxChecked = Array.from(checkBoxes).filter(i => i.checked).map(j => j.value).filter(k => k != 'all');
+      console.log(checkboxChecked);
+      if(checkboxChecked.length == 0){
+        isCheckBoxChecked = false;
+      } else {
+        isCheckBoxChecked = true;
+        chkbox_beef.setCustomValidity("");
+        chkbox_beef.reportValidity();
+      }
+    });
+  });
+  console.log(checkBoxes)
+};
+
+storeCheckBoxValue();
