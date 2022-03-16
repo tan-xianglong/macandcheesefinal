@@ -84,26 +84,26 @@ const pdtImg = document.querySelector("#image");
 //  }
 //};
 
-//4. detecting and storing category result
-const storeCheckBoxValue = () => {
-  checkBoxes = document.querySelectorAll("input[type=checkbox]");
-  checkBoxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function(){
-      checkboxChecked = Array.from(checkBoxes).filter(i => i.checked).map(j => j.value).filter(k => k != 'all');
-      console.log(checkboxChecked);
-      if(checkboxChecked.length == 0){
-        isCheckBoxChecked = false;
-      } else {
-        isCheckBoxChecked = true;
-        chkbox_beef.setCustomValidity("");
-        chkbox_beef.reportValidity();
-      }
-    });
-  });
-  console.log(checkBoxes)
-};
-
-storeCheckBoxValue();
+////4. detecting and storing category result
+//const storeCheckBoxValue = () => {
+//  checkBoxes = document.querySelectorAll("input[type=checkbox]");
+//  checkBoxes.forEach(checkbox => {
+//    checkbox.addEventListener('change', function(){
+//      checkboxChecked = Array.from(checkBoxes).filter(i => i.checked).map(j => j.value).filter(k => k != 'all');
+//      console.log(checkboxChecked);
+//      if(checkboxChecked.length == 0){
+//        isCheckBoxChecked = false;
+//      } else {
+//        isCheckBoxChecked = true;
+//        chkbox_beef.setCustomValidity("");
+//        chkbox_beef.reportValidity();
+//      }
+//    });
+//  });
+//  console.log(checkBoxes)
+//};
+//
+//storeCheckBoxValue();
 
 //5. image preview display
 //initialize img file types

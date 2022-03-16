@@ -33,6 +33,7 @@ newItemForm.addEventListener('submit', (event) => {
     const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
     const quantity = newItemQuantity.value;
     const price = newItemPrice.value;
+    const category = checkboxChecked;
 
 // Clear the form
     newItemNameInput.value = '';
@@ -46,7 +47,7 @@ newItemForm.addEventListener('submit', (event) => {
     chkbox_all.checked = false;
 
     // Add the task to the task manager
-    productsControl.addProduct(name, description, price, quantity, imageUrl, storeImage);
+    productsControl.addProduct(name, description, price, quantity, category, imageUrl, storeImage);
 });
 
 // select file input
@@ -91,3 +92,24 @@ const clearForm = () => {
   newItemQuantity.value = '';
   newItemPrice.value = '';
 };
+
+//4. detecting and storing category result
+const storeCheckBoxValue = () => {
+  checkBoxes = document.querySelectorAll("input[type=checkbox]");
+  checkBoxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function(){
+      checkboxChecked = Array.from(checkBoxes).filter(i => i.checked).map(j => j.value).filter(k => k != 'all');
+      console.log(checkboxChecked);
+      if(checkboxChecked.length == 0){
+        isCheckBoxChecked = false;
+      } else {
+        isCheckBoxChecked = true;
+        chkbox_beef.setCustomValidity("");
+        chkbox_beef.reportValidity();
+      }
+    });
+  });
+  console.log(checkBoxes)
+};
+
+storeCheckBoxValue();
