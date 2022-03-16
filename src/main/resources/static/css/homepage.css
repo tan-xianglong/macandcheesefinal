@@ -28,25 +28,25 @@ body {
   }
 
 .cover-photo {
-padding-left: 180px;
-padding-right: 180px;
+margin: 0 auto;
 padding-top: 20px;
 height:auto;
-width: auto;
+width: 60%;
+min-width: 300px;
+max-width: 900px;
 }
 
 .best{
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: center;
   }
 .carousel-inner{
  display: flex;
  height: auto;
  width: auto;
- padding-left: 280px;
- padding-right: 280px;
- padding-top: 20px;
- padding-bottom: 20px;
+ max-width: 600px;
+ margin: 20px auto;
 
 }
 .carousel-caption {
@@ -60,9 +60,7 @@ width: auto;
 .carousel-indicators{
   height:auto;
   width: auto;
-  padding-left: 280px;
-  padding-right: 280px;
-  max-width: 700px;
+  margin: 0 auto;
 }
 
 

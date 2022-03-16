@@ -95,7 +95,7 @@ class Product {
               <img src="${item.imageUrl}" class="card-img-top" alt="...">
               <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
-              <p class="card-text">${item.price}</p>
+              <p class="card-text">$${item.price}</p>
               <a id="${moreBtnId}" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">More</a>
               </div>
           </div>
