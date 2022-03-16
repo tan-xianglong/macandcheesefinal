@@ -56,7 +56,9 @@ max-width: 900px;
   color:white;
   height:auto;
   width: auto;
+  text-shadow: 0 0 5px black;
 }
+
 .carousel-indicators{
   height:auto;
   width: auto;
