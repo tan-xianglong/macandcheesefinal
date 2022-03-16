@@ -33,7 +33,7 @@ newItemForm.addEventListener('submit', (event) => {
     const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
     const quantity = newItemQuantity.value;
     const price = newItemPrice.value;
-    const category='';
+    let category='';
     if (chkbox_beef.checked) {
         category += 'beef ';
     }
