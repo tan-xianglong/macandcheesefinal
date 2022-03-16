@@ -24,9 +24,12 @@
                 <li class="nav-item1 px-2 pb-2 ">
                     <a class="nav-link1 text-dark"  th:href="@{productform}">Add Product</a>
                 </li>
+            </div>
+            <div sec:authorize="isAuthenticated()">
                 <form id="logOut" th:action="@{/logout}" method="post">
-                    <li class="nav-item1 px-2 pb-2"><a class="nav-link"
-                                                       onclick="document.getElementById('logOut').submit();">Log Out</a></li>
+                    <li class="nav-item1 px-2 pb-2"><a class="nav-link1 text-dark"
+                                                       onclick="document.getElementById('logOut').submit();">LogOut
+                    </a></li>
                 </form>
             </div>
             <div sec:authorize="isAnonymous()">
