@@ -17,26 +17,28 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav me-3 mb-0 mb-lg-0">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{index}" style="color: #AC0D0D;"><span class="h2 px-3">Home</span></a>
+                    <a class="nav-link active" aria-current="page" th:href="@{index}" style="color: #AC0D0D;"><span class="h2 px-1">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{aboutus}"><span class="h2 px-3" style="color: #AC0D0D;">About Us</span></a>
+                    <a class="nav-link" th:href="@{aboutus}"><span class="h2 px-1" style="color: #AC0D0D;">About Us</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  th:href="@{products}"><span class="h2 px-3" style="color: #AC0D0D;">Shop</span></a>
+                    <a class="nav-link"  th:href="@{products}"><span class="h2 px-1" style="color: #AC0D0D;">Shop</span></a>
                 </li>
                 <div sec:authorize="isAuthenticated()">
                     <li class="nav-item">
-                        <a class="nav-link"  th:href="@{productform}"><span class="h2 px-3" style="color: #AC0D0D;">Add Product</span></a>
+                        <a class="nav-link"  th:href="@{productform}"><span class="h2 px-1" style="color: #AC0D0D;">Add Product</span></a>
                     </li>
-                    <form id="logOut" th:action="@{/logout}" method="post">
-                        <li class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();"><span class="h2 px-3" style="color: #AC0D0D;">Log Out</span></a></li>
+                    </div>
+                <div sec:authorize="isAuthenticated()">
+                    <form class="nav-item" id="logOut" th:action="@{/logout}" method="post">
+                        <li><a class="nav-link" onclick="document.getElementById('logOut').submit();"><span class="h2 px-1" style="color: #AC0D0D;">LogOut</span></a></li>
                     </form>
                 </div>
                 <div sec:authorize="isAnonymous()">
-                    <li class="nav-item"><a class="nav-link" th:href="@{login}"><span class="h2 px-3" style="color: #AC0D0D;">Log In</span></a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{login}"><span class="h2 px-1" style="color: #AC0D0D;">Log In</span></a></li>
                 </div>
             </ul>
         </div>

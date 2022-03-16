@@ -35,6 +35,17 @@ newItemForm.addEventListener('submit', (event) => {
     const price = newItemPrice.value;
     const category = checkboxChecked;
 
+    var category='';
+    if (chkbox_beef.checked) {
+        category += 'beef ';
+    }
+    if (chkbox_seafood.checked) {
+        category += 'seafood ';
+    }
+    if (chkbox_chicken.checked) {
+        category += 'chicken ';
+    }
+
 // Clear the form
     newItemNameInput.value = '';
     newItemDescription.value = '';
