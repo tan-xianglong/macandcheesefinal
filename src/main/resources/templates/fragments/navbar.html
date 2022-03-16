@@ -11,7 +11,7 @@
 <nav th:fragment="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color:#F48B29">
     <div class="container">
         <div class="navbar-brand">
-            <img src="images/logo.png" alt="logo" width="100px" height="60px" >
+            <a th:href="@{index}"><img src="images/logo.png" alt="logo" width="100px" height="60px" ></a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                     <li class="nav-item">
                         <a class="nav-link"  th:href="@{productform}"><span class="h2 px-1" style="color: #AC0D0D;">Add Product</span></a>
                     </li>
-                    </div>
+                </div>
                 <div sec:authorize="isAuthenticated()">
                     <form class="nav-item" id="logOut" th:action="@{/logout}" method="post">
                         <li><a class="nav-link" onclick="document.getElementById('logOut').submit();"><span class="h2 px-1" style="color: #AC0D0D;">LogOut</span></a></li>
