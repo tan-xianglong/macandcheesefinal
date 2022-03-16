@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,17 +12,28 @@
     <div class="container-fluid" id="footer">
         <ul class="nav">
             <li class="nav-item1 px-2 pb-2">
-                <a class="nav-link1 active text-dark" href="#" >Home</a>
+                <a class="nav-link1 active text-dark" th:href="@{index}" >Home</a>
             </li>
             <li class="nav-item1 px-2 pb-2 ">
-                <a class="nav-link1 text-dark" href="#">About Us</a>
+                <a class="nav-link1 text-dark" th:href="@{aboutus}">About Us</a>
             </li>
             <li class="nav-item1 px-2 pb-2 ">
-                <a class="nav-link1 text-dark" href="#">Shop</a>
+                <a class="nav-link1 text-dark" th:href="@{products}">Shop</a>
             </li>
-            <li class="nav-item1 px-2 pb-2 ">
-                <a class="nav-link1 text-dark" href="#">Log In</a>
-            </li>
+            <div sec:authorize="isAuthenticated()">
+                <li class="nav-item1 px-2 pb-2 ">
+                    <a class="nav-link1 text-dark"  th:href="@{productform}">Add Product</a>
+                </li>
+                <form id="logOut" th:action="@{/logout}" method="post">
+                    <li class="nav-item1 px-2 pb-2"><a class="nav-link"
+                                                       onclick="document.getElementById('logOut').submit();">Log Out</a></li>
+                </form>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <li class="nav-item1 px-2 pb-2 ">
+                    <a class="nav-link1 text-dark" th:href="@{login}">Log In</a>
+                </li>
+            </div>
         </ul>
 
         <div class="socialplatform">

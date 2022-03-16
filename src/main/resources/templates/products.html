@@ -9,144 +9,25 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/products.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <style>
-        /* Color Palette
-        #FBE6C2 - rgb(251, 230, 194) Beige
-        #F0C929 - rgb(240, 201, 41) Yellow
-        #F48B29 - rgb(244, 139, 41) Orange
-        #AC0D0D - rgb(172, 13, 13) Vermilion
-         */
-
-        /* Card hover effect*/
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-        }
-
-        /* Jumbotron */
         .jumbotron {
-            margin:0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%),
-            url(./images/pdt-top-image-pasta-bowl.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            color:white;
-            height:300px;
+        margin:0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%),
+        url(./images/pdt-top-image-pasta-bowl.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:white;
+        height:300px;
         }
-
-        .jumbotron-text {
-            align-self:flex-end;
-            margin: 0;
-            padding-left: 3%;
-            width: 100%;
-        }
-
-        .jumbotron-text > h1 {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-        .jumbotron-text > p {
-            font-family: Verdana, Tahoma, sans-serif;
-            font-size: 1em;
-        }
-
-        /* Display top-bar checkbox */
-        .top-bar-container {
-            display: flex;
-            justify-content:center;
-            align-items: center;
-            padding: 15px 0;
-            position: sticky;
-            top: 80px;
-            z-index: 1000;
-            background-color: #FBE6C2;
-        }
-
-        /* Checkbox: font */
-        .top-bar-container form {
-            font-family: Verdana, Tahoma, sans-serif;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #AC0D0D;
-        }
-
-        .top-bar-container label {
-            padding: 0 15px;
-        }
-        
-        .top-bar-container input {
-            margin-right: 5px;
-        }
-
-        /* card img */
-        .card-img-top {
-        width: 100%;
-        height: 20vw;
-        object-fit: cover;
-        }
-
-        /* Modal Header Item Name */
-        .modal-header > p {
-            font-weight: bold;
-        }
-
-        /* Modal Text */
-        .modal-body .fs-4 {
-            margin-bottom: 0;
-        }
-
-        /* Modal Image */
-        .modal-body > img {
-            max-height: 500px;
-        }
-
-    /* Mobile Media Queries */
-    @media screen and (max-width: 767px) {
-        
-        /* Checkbox: font */
-        .top-bar-container form {
-            font-family: Verdana, Tahoma, sans-serif;
-            font-weight: bold;
-            font-size: 1em;
-            color: #AC0D0D;
-        }
-        
-        .top-bar-container label {
-            padding: 0 8px;
-        }
-        
-        .top-bar-container input {
-            margin-right: 2px;
-        }
-
-        /* card img */
-        .card-img-top {
-        	width: 100%;
-        	height: 30vw;
-        	object-fit: cover;
-        }
-
-        /* Modal Image */
-        .modal-body > img {
-        	width: 100%;
-        	height: 75vw;
-        	object-fit:cover;
-        }
-
-    }
-
     </style>
     <title>Our Products</title>
 </head>
 <body>
-
-   
     <!-- Header -->
         <!--Navigation Bar -->
     <div th:insert="fragments/navbar.html :: navbar"></div>
@@ -177,11 +58,8 @@
         <!-- End of Sticky Top Bar Filter -->
                 
         <!-- Cards Start-->
-        <div id="row" class="row"> 
-            
-        </div>
+        <div id="row" class="row"></div>
         <!-- Cards End -->
-   
     <!-- Section 2 End -->
 
     <!-- Modal popup for each product when user clicks on product card -->
