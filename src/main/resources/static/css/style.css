@@ -37,12 +37,9 @@ font-family: 'Lobster', cursive;
   }
 
 /* Style for Footer Hover */
-
 #footer a:hover {
-  border-bottom: solid black; 
-
+  border-bottom: solid black;
 }
-
 /* End for Footer Hover */
 
   /* Style for about us Hover */
