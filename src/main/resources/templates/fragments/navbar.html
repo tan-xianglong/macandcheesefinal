@@ -34,7 +34,7 @@
                 </div>
                 <div sec:authorize="isAuthenticated()">
                     <form class="nav-item" id="logOut" th:action="@{/logout}" method="post">
-                        <li><a class="nav-link" onclick="document.getElementById('logOut').submit();"><span class="h2 px-1" style="color: #AC0D0D;">LogOut</span></a></li>
+                        <li><a class="nav-link" onclick="document.getElementById('logOut').submit();" style= "cursor:pointer"> <span class="h2 px-1" style="color: #AC0D0D;">LogOut</span></a></li>
                     </form>
                 </div>
                 <div sec:authorize="isAnonymous()">
