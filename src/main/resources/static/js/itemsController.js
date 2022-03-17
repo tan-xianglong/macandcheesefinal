@@ -91,11 +91,13 @@ class Product {
         moreBtnId = "item" + index;
         productDetails += `
         <div class="col-6 col-md-4 my-4">
-          <div class="card mh-100">
+          <div class="card h-100">
               <img src="${item.imageUrl}" class="card-img-top" alt="...">
               <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">$${item.price}</p>
+              </div>
+              <div class="card-footer">
               <a id="${moreBtnId}" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">More</a>
               </div>
           </div>
