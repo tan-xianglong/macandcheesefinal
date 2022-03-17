@@ -47,8 +47,6 @@ public class ItemControllerTest_3 {
         Mockito.verify(itemService).delete(id);
     }
 
-//    ItemDTO itemDto = new ItemDTO(name, description, price, quantity, categories, fullPath);
-//        itemService.save(new Item(itemDto));]
 
     @Test
     public void saveItemService()
