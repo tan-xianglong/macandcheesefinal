@@ -47,6 +47,10 @@ border-top: none;
         font-size: 1em;
     }
 
+#main {
+min-height: 45vh;
+}
+
 /* Display top-bar checkbox */
 .top-bar-container {
     display: flex;
