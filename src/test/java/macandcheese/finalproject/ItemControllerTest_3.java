@@ -48,7 +48,21 @@ public class ItemControllerTest_3 {
     }
 
 //    ItemDTO itemDto = new ItemDTO(name, description, price, quantity, categories, fullPath);
-//        itemService.save(new Item(itemDto));
+//        itemService.save(new Item(itemDto));]
 
+    @Test
+    public void saveItemService()
+    {
+        Mockito.reset(itemService);
+        Item item = new Item();
+        item.setName("Test Name");
+        item.setDescription("Test Description");
+        item.setPrice(20.0);
+        item.setQuantity(10);
+        item.setCategory("Test Category");
+        item.setImageUrl("Test path");
+        itemService.save(item);
+        Mockito.verify(itemService).save(item);
+    }
 
 }
