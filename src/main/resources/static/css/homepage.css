@@ -35,7 +35,13 @@ width: 60%;
 min-width: 300px;
 max-width: 900px;
 }
-
+.intro{
+  position:absolute;
+  top:17px;
+  left:50px;
+  color: white;
+  text-shadow: 0 0 5px gray;
+}
 .best{
   padding-top: 10px;
   padding-bottom: 10px;
