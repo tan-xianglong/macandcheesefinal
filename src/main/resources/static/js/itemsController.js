@@ -29,7 +29,7 @@ class Product {
     formData.append('imageURL', imageUrl);
     formData.append('imagefile',imageObject);
 
-    fetch('http://localhost:8080/item/add', {
+    fetch('https://macncheese.herokuapp.com/item/add', {
          method: 'POST',
          body: formData
          })
@@ -55,7 +55,7 @@ class Product {
     let productController = this;
     productController._items = [];
 
-    fetch('http://127.0.0.1:8080/item/all')
+    fetch('https://macncheese.herokuapp.com/item/all')
         .then((response)=>response.json())
         .then((data)=>{
             console.log("2. receive data");
