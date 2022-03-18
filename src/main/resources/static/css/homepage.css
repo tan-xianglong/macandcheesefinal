@@ -4,6 +4,10 @@ body {
 
 }
 
+main {
+    min-height: 87vh;
+}
+
 .jumbotron3-text {
         align-self:flex-end;
         margin: 0;

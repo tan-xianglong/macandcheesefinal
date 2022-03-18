@@ -47,8 +47,8 @@ border-top: none;
         font-size: 1em;
     }
 
-#main {
-min-height: 45vh;
+main {
+    min-height: 87vh;
 }
 
 /* Display top-bar checkbox */

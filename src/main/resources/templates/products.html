@@ -33,66 +33,68 @@
     <div th:insert="fragments/navbar.html :: navbar"></div>
         <!-- End of Navigation Bar -->
     <!-- Header End -->
-
-    <!-- Section 1: Jumbotron + Short description -->   
-        <!-- Jumbotron Image -->
-        <div class="jumbotron jumbotron-fluid d-flex" style="margin-top:85px;">
-            <div class="container jumbotron-text">
-              <h1 class="display-6 text-warning">Delicious, Delectable, Decadent</h1><br>
-              <p>Our pastas are made in-house and all our ingredients are sourced locally</p>
-            </div>
+<main>
+    <!-- Section 1: Jumbotron + Short description -->
+    <!-- Jumbotron Image -->
+    <div class="jumbotron jumbotron-fluid d-flex" style="margin-top:85px;">
+        <div class="container jumbotron-text">
+            <h1 class="display-6 text-warning">Delicious, Delectable, Decadent</h1><br>
+            <p>Our pastas are made in-house and all our ingredients are sourced locally</p>
         </div>
+    </div>
     <!-- Section 1 End -->
 
     <!-- Section 2: Area for Product Cards and filter bar -->
-    <div class="container position-relative" id="main">
+    <div class="container position-relative">
         <div class="row">
-        <!-- Sticky Top Bar  -->
+            <!-- Sticky Top Bar  -->
             <div class="col-12 top-bar-container">
-                    <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('all')"><span class="iconify" data-icon="noto-v1:shallow-pan-of-food" data-width="30" data-height="30"></span>All</button>
-                    <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('chicken')"><span class="iconify" data-icon="noto-v1:chicken" data-width="30" data-height="30"></span></i>Chicken</button>
-                    <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('beef')"><span class="iconify" data-icon="noto:cow-face" data-width="30" data-height="30"></span>Beef</button>
-                    <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('seafood')"><span class="iconify" data-icon="noto:fish" data-width="30" data-height="30"></span>Seafood</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('all')"><span class="iconify" data-icon="noto-v1:shallow-pan-of-food" data-width="30" data-height="30"></span>All</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('chicken')"><span class="iconify" data-icon="noto-v1:chicken" data-width="30" data-height="30"></span></i>Chicken</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('beef')"><span class="iconify" data-icon="noto:cow-face" data-width="30" data-height="30"></span>Beef</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="productsControl.filterCat('seafood')"><span class="iconify" data-icon="noto:fish" data-width="30" data-height="30"></span>Seafood</button>
             </div>
         </div>
         <!-- End of Sticky Top Bar Filter -->
-                
+
         <!-- Cards Start-->
         <div id="row" class="row"></div>
         <!-- Cards End -->
-    <!-- Section 2 End -->
+        <!-- Section 2 End -->
 
-    <!-- Modal popup for each product when user clicks on product card -->
-    <div id="productModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p id="itemName">Item Name</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="itemImage" src="" class="w-100" alt="Product Item Image">
-                    <hr>
-                    <b>Description: </b> <span id="itemDescription" class="mt-1">Mac</span>
-                    <br />
-                    <b>Price($): </b><span id="itemPrice" class="mt-1">10.5</span>
-                    <!-- Special Request text area -->
-                    <div class="mb-1">
-                        <label class="form-label"><b>Special Requests:</b></label>
-                        <textarea class="form-control" placeholder="e.g. more cheese, etc."></textarea>
+        <!-- Modal popup for each product when user clicks on product card -->
+        <div id="productModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p id="itemName">Item Name</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <label class="form-label" for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" class="form-control-sm" min="1" max="20">
-                    <!-- To close modal after clicking add to cart button  -->
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add to Cart</button>
+                    <div class="modal-body">
+                        <img id="itemImage" src="" class="w-100" alt="Product Item Image">
+                        <hr>
+                        <b>Description: </b> <span id="itemDescription" class="mt-1">Mac</span>
+                        <br />
+                        <b>Price($): </b><span id="itemPrice" class="mt-1">10.5</span>
+                        <!-- Special Request text area -->
+                        <div class="mb-1">
+                            <label class="form-label"><b>Special Requests:</b></label>
+                            <textarea class="form-control" placeholder="e.g. more cheese, etc."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <label class="form-label" for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control-sm" min="1" max="20">
+                        <!-- To close modal after clicking add to cart button  -->
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- End of productModal -->
     </div>
-    <!-- End of productModal -->
-</div>   
+</main>
+
 
     <!-- Footer -->
     <div th:insert="fragments/footer.html :: footer"></div>
