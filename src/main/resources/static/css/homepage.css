@@ -4,6 +4,23 @@ body {
 
 }
 
+.jumbotron3-text {
+        align-self:flex-end;
+        margin: 0;
+        padding-left: 3%;
+        width: 100%;
+    }
+
+    .jumbotron3-text > h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .jumbotron3-text > p {
+        font-family: Verdana, Tahoma, sans-serif;
+        font-size: 1em;
+    }
+
+
 .jumbotron {
   background-color: #FBE6C2;
   max-width: 100%;
