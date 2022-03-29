@@ -41,11 +41,11 @@ A text only horizontal navigation bar helps users in selecting topics or links o
 
 #### Features
 Navbar with the menu options for each page:
- *	Home
- *	About Us
- * Shop
- * Add product(after authenticated with 'Admin' role)
- * Log in/out
+  *	Home
+  *	About Us
+  * Shop
+  * Add product(after authenticated with 'Admin' role)
+  * Log in/out
  
 * Thymeleaf template engine to create a separate navbar.html and footer.html to be inserted in all main html files & redirects the expected html pages
 
