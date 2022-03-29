@@ -2,7 +2,7 @@
 
 This is the final project assignment for the SG United Mid-Career Pathways Program - Company Training (SGUP-CT) which is collaboratively developed by 4 team members.
 
-Visit [Mac & Cheese Store](https://google.com) to see the full site.
+Visit [Mac & Cheese Store](https://macncheese.herokuapp.com/) to see the full site.
 
 ## Table of Contents
 * [General Information](#general-information)
@@ -44,9 +44,10 @@ Navbar with the menu options for each page:
  *	Home
  *	About Us
  * Shop
- * Log in
+ * Add product(after authenticated with 'Admin' role)
+ * Log in/out
  
-* Add a link to each menu item so it redirects to expected html page.
+* Thymeleaf template engine to create a separate navbar.html and footer.html to be inserted in all main html files & redirects the expected html pages
 
 * Responsive behaviour:
 
@@ -89,20 +90,21 @@ Static page that contains the following parts:
 #### Features
 * Design application’s wireframes on ow the application will work and look by using Moqups
 * Bootstrap - card componet was selected as according to our wireframes structure which created
-* Open html file on browser and verify it looks and works as expected
 * Responsive display:
    * Bootstrap's Grid system - 2 columns for desktop, 1 column for mobile view, breakpoint : lg (large)992px
+* Styling:
+   * Styling: icon - Iconify API 
 
 ***Desktop view***
 
-![aboutus laptop](https://user-images.githubusercontent.com/97433106/155097988-7a72fd3b-3325-4b1c-ad84-7a75a9ed5489.JPG)
+![aboutus laptop](https://user-images.githubusercontent.com/97433106/160568196-7b1dad87-5c92-47bd-8333-b68df01ea3bf.png)
 
 
 
 
 ***Mobile view***
 
-![aboutus mobile](https://user-images.githubusercontent.com/97433106/155098000-162a2954-4280-4437-8980-4c02ba978752.JPG)
+![aboutus mobile](https://user-images.githubusercontent.com/97433106/160570222-041cd61e-7b51-4c62-81e2-ab4f3851a999.png)
 
 
 
